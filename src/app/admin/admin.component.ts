@@ -13,7 +13,7 @@ export class AdminComponent {
     this.router.navigate(['/add-employee']); 
   }
   doSomething(): void {
-    alert('Button Clicked!');
+    this.router.navigate(['/create']);
   }
 
 }
