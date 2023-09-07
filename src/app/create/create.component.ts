@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+
+import { Component, } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
 })
 export class CreateComponent {
 
+  dataList = [];
+ 
+  constructor(public service: DataService){
+
+  }
+getData(){
+  this.service.getUser().subscribe((res:any)=>{
+    this.dataList=res
+  })
+}
 }

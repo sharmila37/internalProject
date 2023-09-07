@@ -1,1 +1,10 @@
-<p>create works!</p>
+
+<select>
+    <option>Select</option>
+      <option *ngFor="let item of this.dataList;let i = index">
+      </option>
+    </select>
+
+    <button (click)="getData()">
+        Click
+    </button>
