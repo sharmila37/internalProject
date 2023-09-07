@@ -1,1 +1,63 @@
-<p>add-employee works!</p>
+<div class="modal-header">
+  <h4 class="modal-title">Add Employee</h4>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control border-primary" id="name" [(ngModel)]="employee.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="qualification">Qualification</label>
+      <input type="text" class="form-control border-success" id="qualification" [(ngModel)]="employee.qualification" name="qualification" required>
+    </div>
+    <div class="form-group">
+      <label for="project">Project</label>
+      <input type="text" class="form-control border-info" id="project" [(ngModel)]="employee.project" name="project" required>
+    </div>
+    <div class="form-group">
+      <label for="experience">Experience</label>
+      <input type="text" class="form-control border-warning" id="experience" [(ngModel)]="employee.experience" name="experience" required>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+</div>
+
+
+<div class="container mt-4">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Qualification</th>
+        <th>Project</th>
+        <th>Experience</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of data">
+        <td>{{ x.name }}</td>
+        <td>{{ x.qualification }}</td>
+        <td>{{ x.project }}</td>
+        <td>{{ x.experience }}</td>
+        <td>
+          <div class="d-flex">
+            <div *ngIf="!editing" class="mr-2">
+              <p>{{ content }}</p>
+              <button class="btn btn-primary" (click)="onSubmit('edit')">Edit</button>
+            </div>
+            <div *ngIf="editing" class="mr-2">
+              <input [(ngModel)]="editedContent" type="text" class="form-control" />
+              <button class="btn btn-success" (click)="updateContent()">Update</button>
+            </div>
+            <button class="btn btn-danger" (click)="onSubmit('delete', x.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

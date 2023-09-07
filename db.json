@@ -1,0 +1,25 @@
+{
+  "emp": [
+    {
+      "name": "sharmi",
+      "qualification": "MSc",
+      "project": "LIVE",
+      "experience": "1",
+      "id": 1
+    },
+    {
+      "name": "amutha",
+      "qualification": "BSc",
+      "project": "CRUD",
+      "experience": "2",
+      "id": 2
+    },
+    {
+      "name": "anu",
+      "qualification": "BE",
+      "project": "OPERATION",
+      "experience": "6",
+      "id": 3
+    }
+  ]
+}

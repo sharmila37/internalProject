@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  constructor(private router: Router) {}
+  employee:any={};
+  constructor(private router: Router,private service:ServiceService) {}
 
   addEmployee(): void {
     this.router.navigate(['/add-employee']); 
@@ -15,5 +17,8 @@ export class AdminComponent {
   doSomething(): void {
     alert('Button Clicked!');
   }
-
+  onClick(){
+    this.router.navigate(['/add-employee']);
+  }
+  
 }

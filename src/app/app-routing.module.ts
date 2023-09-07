@@ -8,8 +8,8 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {path:'admin', component:AdminComponent},
   {path:'user', component:UserComponent},
-  {path:'addemployee', component:AddEmployeeComponent},
-  {path:'', component:LoginComponent},
+  {path:'add-employee', component:AddEmployeeComponent},
+  {path:'', component:LoginComponent}
 
 ];
 

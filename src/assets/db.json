@@ -1,4 +1,26 @@
 {
     "team":[],
-    "emp":[]
+    "emp":[
+        {
+            "name": "aishu",
+            "qualification": "cse",
+            "project": "crud",
+            "experience": "1 year",
+            "id": 1
+          },
+          {
+            "name": "sharmi",
+            "qualification": "biotech",
+            "project": "crud",
+            "experience": "2 year",
+            "id": 2
+          },
+          {
+            "name": "anu",
+            "qualification": "biotech",
+            "project": "crud",
+            "experience": "6 months",
+            "id": 3
+          }
+    ]
 }

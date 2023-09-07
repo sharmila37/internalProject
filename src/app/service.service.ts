@@ -1,29 +1,25 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
-  private adminCredentials = { username: 'admin', password: 'admin123' };
-  private userCredentials = { username: 'user', password: 'user123' };
-
-  login(username: string, password: string): boolean {
-    if (username === this.adminCredentials.username && password === this.adminCredentials.password) {
-      localStorage.setItem('role', 'admin');
-      return true;
-    } else if (username === this.userCredentials.username && password === this.userCredentials.password) {
-      localStorage.setItem('role', 'user');
-      return true;
-    } else {
-      return false;
-    }
+  getDataFromAPI() {
+    throw new Error('Method not implemented.');
   }
+  constructor( private http:HttpClient){}
+  
 
-  logout(): void {
-    localStorage.removeItem('role');
+  getdata(){
+    return this.http.get('http://localhost:3000/emp');
   }
-
-  isAdmin(): boolean {
-    return localStorage.getItem('role') === 'admin';
-  }
+  postid(data:any){
+    return this.http.post('http://localhost:3000/emp',data);
+   }
+   deleteid(id:any){
+     return this.http.delete('http://localhost:3000/emp/'+id);
+   }
+   updateid(data:any){
+    return this.http.put('http://localhost:3000/emp', data);
+   }
 }
